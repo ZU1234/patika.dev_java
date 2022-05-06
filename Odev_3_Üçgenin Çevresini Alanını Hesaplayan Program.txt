@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Yeni {
+    public static void main(String[] args) {
+        double kenar1,kenar2,kenar3,u;
+        Scanner input=new Scanner(System.in);
+        System.out.println("birinci kenarýn deðerini giriniz: ");
+        kenar1=input.nextDouble();
+        System.out.println("ikinci kenarýn deðerini giriniz: ");
+        kenar2=input.nextDouble();
+        System.out.println("ucuncu kenarýn deðerini giriniz: ");
+        kenar3=input.nextDouble();
+        u=(kenar1+kenar2+kenar3)/2;
+        System.out.println("ucgenin alani: "+Math.sqrt(u*(u-kenar1)*(u-kenar2)*(u-kenar3)));
+        System.out.println("ücgenin cevresi: "+2*u);
+
+      }
+
+}
