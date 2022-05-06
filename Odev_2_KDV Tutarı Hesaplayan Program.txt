@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Yeni {
+    public static void main(String[] args) {
+        double ucret,kdv,tutar;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Ucret giriniz:  ");
+        ucret = input.nextDouble();
+        if (ucret<1000){
+            kdv=18/100d;
+            tutar = ucret * kdv + ucret;
+            System.out.println("ucret : "+ucret);
+            System.out.println("kdv orani : "+kdv);
+            System.out.println("kdv miktarý : "+ucret*kdv);
+            System.out.println("kdvli fiyat : "+tutar);
+        }
+        else{
+            kdv=8/100d;
+            tutar = ucret * kdv + ucret;
+            System.out.println("ucret: "+ucret);
+            System.out.println("kdv orani : "+kdv);
+            System.out.println("kdv miktarý : "+ucret*kdv);
+            System.out.println("kdvli fiyat : "+tutar);
+        }
+      }
+
+}
