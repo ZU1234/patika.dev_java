@@ -7,14 +7,14 @@ public class Main {
        Scanner input=new Scanner(System.in);
        System.out.println("Daire yari capini giriniz: ");
        r=input.nextInt();
-       System.out.println("Daire dilim açısını giriniz: ");
+       System.out.println("Daire dilim aÃ§Ä±sÄ±nÄ± giriniz: ");
        alfa= input.nextInt();
        alan=3.14*Math.pow(r,2);
        cevre=2*3.14*r;
        dilimAlani=((3.14*(Math.pow(r,2))*alfa)/360);
-       System.out.println("Dairenin alanı: "+alan);
+       System.out.println("Dairenin alanÄ±: "+alan);
        System.out.println("Dairenin cevresi: "+cevre);
-       System.out.println("Daire dilimin alanı: "+dilimAlani);
+       System.out.println("Daire dilimin alanÄ±: "+dilimAlani);
 
 
     }
