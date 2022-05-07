@@ -1,0 +1,16 @@
+/* Minimum ödenecek tutar 20TL'dir.Baþlangýç tutarý 10TL'dir. KM baþýna ödenecek tutar hesaplanýr.*/
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        double km,carpan=2.20,tutar;
+        Scanner input=new Scanner(System.in);
+        km= input.nextDouble();
+        tutar=km*carpan+10;
+        System.out.println(20<=tutar ? "Odenecek tutar:"+tutar+"TL":"odenecek tutar: 20TL");
+
+
+
+    }
+}

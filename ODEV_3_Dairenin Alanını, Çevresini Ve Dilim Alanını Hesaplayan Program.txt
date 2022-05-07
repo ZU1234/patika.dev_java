@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+       int r,alfa;
+       double cevre,dilimAlani,alan;
+       Scanner input=new Scanner(System.in);
+       System.out.println("Daire yari capini giriniz: ");
+       r=input.nextInt();
+       System.out.println("Daire dilim açýsýný giriniz: ");
+       alfa= input.nextInt();
+       alan=3.14*Math.pow(r,2);
+       cevre=2*3.14*r;
+       dilimAlani=((3.14*(Math.pow(r,2))*alfa)/360);
+       System.out.println("Dairenin alaný: "+alan);
+       System.out.println("Dairenin cevresi: "+cevre);
+       System.out.println("Daire dilimin alaný: "+dilimAlani);
+
+
+    }
+}
