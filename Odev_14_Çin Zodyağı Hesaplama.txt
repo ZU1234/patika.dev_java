@@ -1,0 +1,84 @@
+/* Java ile mesafeye ve þartlara göre uçak bileti fiyatý hesaplayan programý yapýn. Kullanýcýdan Mesafe (KM), yaþý ve yolculuk tipi (Tek Yön, Gidiþ-Dönüþ) bilgilerini alýn. Mesafe baþýna ücret 0,10 TL / km olarak alýn. Ýlk olarak uçuþun toplam fiyatýný hesaplayýn ve sonrasýnda ki koþullara göre müþteriye aþaðýdaki indirimleri uygulayýn ;
+
+Kullanýcýdan alýnan deðerler geçerli (mesafe ve yaþ deðerleri pozitif sayý, yolculuk tipi ise 1 veya 2) olmalýdýr. Aksi takdirde kullanýcýya "Hatalý Veri Girdiniz !" þeklinde bir uyarý verilmelidir.
+Kiþi 12 yaþýndan küçükse bilet fiyatý üzerinden %50 indirim uygulanýr.
+Kiþi 12-24 yaþlarý arasýnda ise bilet fiyatý üzerinden %10 indirim uygulanýr.
+Kiþi 65 yaþýndan büyük ise bilet fiyatý üzerinden %30 indirim uygulanýr.
+Kiþi "Yolculuk Tipini" gidiþ dönüþ seçmiþ ise bilet fiyatý üzerinden %20 indirim uygulanýr.*/
+
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        int dogumYili,zodyag;
+        String burc="";
+        boolean isKontrol=true;
+        Scanner input=new Scanner(System.in);
+        System.out.print("Dogum yilinizi giriniz: ");
+        dogumYili=input.nextInt();
+        zodyag=dogumYili%12;
+        switch (zodyag) {
+            case 0:
+                burc = "Maymun";
+                isKontrol=true;
+                break;
+            case 1:
+                burc = "Horoz";
+                isKontrol=true;
+                break;
+            case 2:
+                burc = "Kopek";
+                isKontrol=true;
+                break;
+            case 3:
+                burc = "Domuz";
+                isKontrol=true;
+                break;
+            case 4:
+                burc = "Fare";
+                isKontrol=true;
+                break;
+            case 5:
+                burc = "Okuz";
+                isKontrol=true;
+                break;
+            case 6:
+                burc = "Kaplan";
+                isKontrol=true;
+                break;
+            case 7:
+                burc = "Tavsan";
+                isKontrol=true;
+                break;
+            case 8:
+                burc = "Ejderha";
+                isKontrol=true;
+                break;
+            case 9:
+                burc = "Yilan";
+                isKontrol=true;
+                break;
+            case 10:
+                burc = "At";
+                isKontrol=true;
+                break;
+            case 11:
+                burc = "Koyun";
+                isKontrol=true;
+                break;
+        }
+        if(isKontrol){
+            System.out.println("Cin Zodyagý Burcunuz: "+burc);
+        }else{
+            System.out.println("Hatali giris yaptiniz!!");
+        }
+    }
+}
+
+
+
+
+
+
+
+
