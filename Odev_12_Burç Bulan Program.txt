@@ -1,0 +1,170 @@
+/*Koç Burcu : 21 Mart - 20 Nisan,Boða Burcu : 21 Nisan - 21 Mayýs
+Ýkizler Burcu : 22 Mayýs - 22 Haziran,Yengeç Burcu : 23 Haziran - 22 Temmuz
+Aslan Burcu : 23 Temmuz - 22 Aðustos,Baþak Burcu : 23 Aðustos - 22 Eylül
+Terazi Burcu : 23 Eylül - 22 Ekim,Akrep Burcu : 23 Ekim - 21 Kasým
+Yay Burcu : 22 Kasým - 21 Aralýk,Oðlak Burcu : 22 Aralýk - 21 Ocak
+Kova Burcu : 22 Ocak - 19 Þubat,Balýk Burcu : 20 Þubat - 20 Mart*/
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int month,day;
+        String burc="";
+        boolean iskontrol=false;
+
+        Scanner input=new Scanner(System.in);
+
+        System.out.println("Dogdugunuz ay:");
+        month=input.nextInt();
+
+        System.out.println("Dogdugunuz gun: ");
+        day=input.nextInt();
+        if((month==1)){
+            if(0<=day && day<=21){
+                burc="Oglak";
+            }
+            else if(22<=day && day<=31){
+                burc="Kova";
+            }
+            else {
+                iskontrol=true;
+            }
+        }
+        else if((month==2)){
+            if(0<=day && day<=19){
+                burc="Kova";
+            }
+            else if(20<=day && day<=31){
+                burc="Balik";
+            }
+            else {
+                iskontrol=true;
+            }
+        }
+        else if((month==3)){
+            if(0<=day && day<=20){
+                burc="balik";
+            }
+            else if(21<=day && day<=31){
+                burc="koc";
+            }
+            else {
+                iskontrol=true;
+            }
+        }
+        else if((month==4)){
+            if(0<=day && day<=20){
+                burc="Koc";
+            }
+            else if(21<=day && day<=31){
+                burc="Boga";
+            }
+            else {
+                iskontrol=true;
+            }
+        }
+        else if((month==5)){
+            if(0<=day && day<=21){
+                burc="Boga";
+            }
+            else if(22<=day && day<=31){
+                burc="Ikizler";
+            }
+            else {
+                iskontrol=true;
+            }
+        }
+        else if((month==6)){
+            if(0<=day && day<=22){
+                burc="Ikizler";
+            }
+            else if(23<=day && day<=31){
+                burc="Yengec";
+            }
+            else {
+                iskontrol=true;
+            }
+        }
+        else if((month==7)){
+            if(0<=day && day<=22){
+                burc="Yengec";
+            }
+            else if(23<=day && day<=31){
+                burc="Aslan";
+            }
+            else {
+                iskontrol=true;
+            }
+        }
+        else if((month==8)){
+            if(0<=day && day<=22){
+                burc="Aslan";
+            }
+            else if(23<=day && day<=31){
+                burc="Basak";
+            }
+            else {
+                iskontrol=true;
+            }
+        }
+        else if((month==9)){
+            if(0<=day && day<=22){
+                burc="Basak";
+            }
+            else if(23<=day && day<=31){
+                burc="Terazi";
+            }
+            else {
+                iskontrol=true;
+            }
+        }
+        else if((month==10)){
+            if(0<=day && day<=22){
+                burc="Terazi";
+            }
+            else if(23<=day && day<=31){
+                burc="Akrep";
+            }
+            else {
+                iskontrol=true;
+            }
+        }
+        else if((month==11)){
+            if(0<=day && day<=21){
+                burc="Akrep";
+            }
+            else if(22<=day && day<=31){
+                burc="Yay";
+            }
+            else {
+                iskontrol=true;
+            }
+        }
+        else if((month==12)){
+            if(0<=day && day<=21){
+                burc="Yay";
+            }
+            else if(22<=day && day<=31){
+                burc="Oglak";
+            }
+            else {
+                iskontrol=true;
+            }
+        }
+        if(iskontrol){
+            System.out.println("Hatali giris yaptiniz.");
+        }
+        else{
+            System.out.println("Burcunuz: "+burc);
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
