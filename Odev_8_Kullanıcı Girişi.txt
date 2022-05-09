@@ -1,0 +1,58 @@
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String user = "admin", user1, password1, password = "1234";
+        int islem;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Sifre islemleri...");
+        System.out.print("Kullanici adini giriniz:");
+        user1 = input.nextLine();
+
+        if (user.equals(user1)) {
+            System.out.println("Kullanici sifresini giriniz: ");
+            password1 = input.nextLine();
+
+            if (password.equals(password1))
+                System.out.println("Giris basarili.");
+            else {
+
+                System.out.println("Sifre yanlis,lutfen baska sifre giriniz.");
+                password1 = input.nextLine();
+
+                if (password.equals(password1))
+                    System.out.println("Giris basarili.");
+                else {
+                    System.out.println("1-Sifre degistirmek\n2-Iptal\nSeceneklerden birini seciniz.");
+                    islem = input.nextInt();
+                    switch (islem) {
+                        case 1:
+                            Scanner inp=new Scanner(System.in);
+                            System.out.print("Yeni sifreyi giriniz:");
+                            password1 = inp.nextLine();
+                            System.out.print("\nYeni sifreyi takrar giriniz:");
+                            password = inp.nextLine();
+                            if (password.equals(password1)) {
+                                System.out.println("Sifre olusturuldu.");
+                            } else {
+                                System.out.println("Sifreler uyusmamaktadir.Islem iptal edildi.");
+                            }
+                        case 2:
+                    }
+                }
+            }
+        } else {
+            System.out.println("Kullanici adi yanliþ.");
+        }
+    }
+}
+
+
+
+
+
+
+
+
