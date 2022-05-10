@@ -1,0 +1,54 @@
+/*Artýk Yýl Nedir?
+
+Artýk yýl, Miladî takvimde 365 yerine 366 günü olan yýl. Bu fazladan gün (artýk gün),
+normalde 28 gün olan þubat ayýna 29 Þubat’ýn eklenmesi ile elde edilir.
+
+Artýk Yýl Nasýl Hesaplanýr?
+
+Genel bir kural olarak, artýk yýllar 4 rakamýnýn katý olan yýllardýr:
+
+1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020, 2024 gibi.
+100'ün katý olan yýllardan sadece 400'e kalansýz olarak bölünebilenler artýk yýldýr:
+
+Örneðin 1200, 1600, 2000 yýllarý artýk yýldýr ancak 1700, 1800 ve 1900 artýk yýl deðildir.
+Sadece 400'e tam olarak bölünebilenlerin artýk yýl kabul edilmesinin nedeni, bir astronomik
+yýlýn 365,25 gün deðil, yaklaþýk olarak 365,242 gün olmasýndan kaynaklanan hatayý gidermektir.*/
+------------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        int yil;
+        boolean isSonuc=true;
+        Scanner input=new Scanner(System.in);
+        System.out.print("Yil giriniz: ");
+        yil=input.nextInt();
+
+        if (yil%100==0){
+            if(yil%400==0){
+                isSonuc=true;
+            }
+            else {
+                isSonuc=false;
+            }
+        }else {
+            if (yil%4==0){
+                isSonuc=true;
+            }else{
+                isSonuc=false;
+            }
+        }
+        if(isSonuc){
+            System.out.println(yil+" bir artik yildir.");
+        }else {
+            System.out.println(yil+" bir artik yil degildir.");
+        }
+
+
+
+
+
+
+    }
+}
+
