@@ -1,5 +1,28 @@
-/*Java d�ng�ler ile girilen say�ya kadar olan
-4 ve 5'in kuvvetlerini ekrana yazd�ran program� */
+/*Java döngüler ile girilen sayıya kadar olan
+4 ve 5'in kuvvetlerini ekrana yazdıran programı */
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        int num,sonuc;
+        Scanner input=new Scanner(System.in);
+
+        num=input.nextInt();
+
+
+        for (int i=1;i<=num;i*=4) {
+            System.out.println("4'un kuvvetleri: " + (i));
+        }
+        System.out.println("\n");
+        for (int i=1;i<=num;i*=5) {
+            System.out.println("5'in kuvvetleri: " + (i));
+        }
+    }
+}
+
+-----------------------------------------------------------------------------------------
+/*Java döngüler ile girilen sayıya kadar olan sayıların her birinin
+4. ve 5.'in kuvvetlerini ekrana yazdýran programý */
 
 
 
