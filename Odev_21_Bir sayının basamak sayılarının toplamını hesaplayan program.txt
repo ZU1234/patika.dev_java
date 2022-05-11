@@ -1,0 +1,37 @@
+/* Bir sayýnýn basamak sayýlarýnýn toplamýný hesaplayan program yazýnýz.*/
+
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+         int sayi,toplam=0;
+        int basamak=0,tempNumber,basamakValue;
+
+        Scanner input=new Scanner(System.in);
+       
+        System.out.println("Sayiyi giriniz:  ");
+        sayi=input.nextInt();
+        
+        tempNumber=sayi;
+        
+        while(tempNumber!=0){
+            basamakValue=tempNumber%10;
+            tempNumber/=10;
+            
+            toplam+=basamakValue;
+        }
+
+        System.out.println("\nToplam= "+toplam);
+
+
+
+
+
+    }
+}
+
+
+
+
+
+
