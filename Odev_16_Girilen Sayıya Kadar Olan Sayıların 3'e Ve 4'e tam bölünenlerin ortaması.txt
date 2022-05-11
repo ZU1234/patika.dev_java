@@ -1,0 +1,35 @@
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        
+        int k,n=0,toplam=0;
+        Scanner input=new Scanner(System.in);
+
+        System.out.println("Sayi giriniz: ");
+        k=input.nextInt();
+        
+        System.out.print("Tam bolunen sayilar=  ");
+        
+        for (int i=1;i<=k;i++){
+            if ((i%3==0)&&(i%4==0)){
+                n++;
+                
+                System.out.print(i+",");
+               
+                toplam=toplam+i;
+
+            }
+            while(k==i) {
+                System.out.println("\n3'e ve 4'e tam bolunen sayilarin ortalamasi:  "+toplam/n);
+                break;
+            }
+        }
+    }
+}
+
+
+
+
+
+
