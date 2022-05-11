@@ -1,0 +1,29 @@
+/*tek bir sayý girilene kadar kullanýcýdan 
+giriþleri kabul eden ve girilen deðerlerden çift
+ve 4'ün katlarý olan sayýlarý toplayýp ekrana 
+basan programý yazýyoruz.*/
+
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        int number,sum=0;
+        Scanner input=new Scanner(System.in);
+
+        do{
+            System.out.print("Sayi giriniz: ");
+            number=input.nextInt();
+            if (number%2==0 && number%4==0){
+                sum=sum+number;
+            }
+        }while(number%2!=1);
+        System.out.println("Cift ve dordun kati olan sayilarin toplami: "+sum);
+
+    }
+}
+
+
+
+
+
+
