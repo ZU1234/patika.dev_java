@@ -1,0 +1,30 @@
+/* Java ile kullanýcýnýn girdiði
+ deðerler ile üslü sayý hesaplayan programý 
+ "For Döngüsü" kullanarak yapýnýz.*/
+
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        int num,uss,total=1;
+
+        Scanner input=new Scanner(System.in);
+
+        System.out.println("Ussu alýnacak sayiyi giriniz: ");
+        num=input.nextInt();
+
+        System.out.println("Us sayisini giriniz:  ");
+        uss=input.nextInt();
+
+        for(int i=0;i<uss;i++){
+            total*=num;
+        }
+        System.out.println("Bulunan deger:  "+total);
+    }
+}
+
+
+
+
+
+
