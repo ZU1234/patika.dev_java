@@ -1,0 +1,22 @@
+/* Java ile girilen sayýnýn harmonik serisini bulan program */
+
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("N sayisini giriniz: ");
+        int n=input.nextInt();
+        double toplam=0d;
+        for (int i=0;i<=n;i++){
+            toplam+=(1.0/n);
+        }
+        System.out.println(toplam);
+    }
+}
+
+
+
+
+
+
