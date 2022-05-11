@@ -1,0 +1,51 @@
+/* N elemanlý bir kümenin elemanlarý ile oluþturulacak r elemanlý farklý
+ gruplarýn sayýsý n’in r’li kombinasyonu olarak adlandýrýlýr. N’in r’li
+ kombinasyonu C(n,r) þeklinde gösterilir.
+Java ile kombinasyon hesaplayan program yazýnýz.
+
+Kombinasyon formülü
+C(n,r) = n! / (r! * (n-r)!) */
+
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        int num,group,totalGroup=1,total=1,totalDifference=1;
+        Scanner input=new Scanner(System.in);
+
+        System.out.print("Kümenin eleman sayisini giriniz: ");
+        num=input.nextInt();
+
+        System.out.print("Olusturulacak gruplarin eleman sayisi kac olsun?  :");
+        group=input.nextInt();
+
+        /*Kümedeki eleman sayýsýnýn faktöriyelini hesaplar.<n!>*/
+        for(int i=1;i<=num;i++){
+            total=total*i;
+        }
+
+        /*Oluþturulacak gruplardaki eleman sayýsýnýn faktöriyelini hesaplar.<r!>*/
+        for(int k=1;k<=group;k++){
+            totalGroup=totalGroup*k;
+        }
+
+        /*Kümedeki eleman sayýsý ile gruplardaki eleman sayýsýnýn farkýnýn faktöriyelini hesaplar.<(n-r)!>*/
+        for(int j=1;j<=(num-group);j++){
+            totalDifference=totalDifference*j;
+        }
+        System.out.println(total/(totalGroup*(totalDifference)));
+
+
+
+
+
+
+
+    }
+}
+
+
+
+
+
+
