@@ -1,0 +1,32 @@
+/* Klavyeden girilen bir sayýnýn mükemmel sayý
+ olup/olmadýðýný bulan ve sayý mükemmel sayý ise ekrana
+ “mükemmel sayýdýr.” deðilse “mükemmel sayý deðildir.”
+ ifadelerini ekrana yazan programý Java dilinde yazýnýz.
+
+Mükemmel Sayý Nedir ?
+Bir sayýnýn kendisi hariç pozitif tam sayý çarpanlarý (kalansýz
+bölen sayýlarýn) toplamý kendisine eþit olan sayýya mükemmel sayý denir. */
+
+
+import java.util.Scanner;
+    public class Main {
+        public static void main(String[] args) {
+            Scanner input=new Scanner(System.in);
+            System.out.print("Bir sayi giriniz");
+            int num=input.nextInt();
+            int toplam=0;
+
+            for (int i=1;i<num;i++){
+                while (num%i==0){
+                    toplam+=i;
+
+                    break;
+                }
+            }if(toplam==num) {
+                System.out.println(num + "  Mukemmel sayidir.");
+            }
+            else{
+                System.out.println(num + "  Mukemmel sayi degildir.");
+            }
+        }
+    }
