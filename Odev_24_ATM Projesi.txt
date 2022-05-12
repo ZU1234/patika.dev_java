@@ -1,0 +1,75 @@
+/* ATM Projesi */
+
+
+import java.util.Scanner;
+    public class Main {
+        public static void main(String[] args) {
+            String userName, password;
+            Scanner input = new Scanner(System.in);
+
+            int right = 3;
+            int balance = 1500, select;
+
+            while (right > 0) {
+                System.out.print("Kullanici adini giriniz");
+                userName = input.nextLine();
+                System.out.println("Parolaniz");
+                password = input.nextLine();
+
+                if (userName.equals("patika") && password.equals("dev123")) {
+                    System.out.println("Merhaba, kodluyoruz bankasina hosgeldiniz. ");
+                    do {
+                        System.out.println("1-Para yatirma\n" +
+                                "2-Para cekme\n" +
+                                "3-Bakiye sorgulama\n" +
+                                "4-Cikis yap");
+                        System.out.print("Lutfen yapmak istedðiniz islemi seciniz.");
+                        select = input.nextInt();
+
+                        switch (select) {
+                            case 1: {
+                                System.out.print("Para miktari:");
+                                int price = input.nextInt();
+                                balance += price;
+                                break;
+                            }
+                            case 2: {
+                                System.out.print("Para miktari:");
+                                int price = input.nextInt();
+                                if (price > balance) {
+                                    System.out.println("Bakiyeniz yetersiz.");
+                                } else {
+                                    balance -= price;
+                                }
+                                break;
+                            }
+                            case 3: {
+                                System.out.println("Bakiyeniz: " + balance);
+                                break;
+                            }
+                            case 4:{System.out.println("Cikis yapiliyor...");
+
+                                break;
+
+                            } default:
+                                System.out.println("Hatali giris yapildi.");
+                                break;
+
+                        }
+                    }while (select>4);
+                        System.out.println("Tekrar gorusmek uzere.");
+                        break;
+
+                }
+                else {
+                    System.out.println("Hatali kullanici adi veya sifre.Tekrar deneyiniz.");
+                    right--;
+                    if (right == 0) {
+                        System.out.println("Hesabiniz bloke olmustur. Lutfen banka ile iletisime geciniz.");
+                    } else {
+                        System.out.println("Kalan hakkiniz" + right);
+                    }
+                }
+            }
+        }
+    }
