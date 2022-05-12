@@ -1,0 +1,42 @@
+/* EBOB-EKOK Bulan Program */
+
+
+import java.util.Scanner;
+    public class Main {
+        public static void main(String[] args) {
+            int n1, n2, num1, num2;
+
+            Scanner input = new Scanner(System.in);
+
+            System.out.print("Birinci sayiyi giriniz: ");
+            n1 = input.nextInt();
+
+            System.out.print("Ikinci sayiyi giriniz: ");
+            n2 = input.nextInt();
+
+            if (n1 >= n2) {
+                num1 = n2;
+                num2 = n1;
+            } else {
+                num1 = n1;
+                num2 = n2;
+            }
+            System.out.println("\nSayilar: "+num1 + "  " + num2);
+
+            int i = 1, j = n1*n2,obeb=0,okek=0;
+            for (int k = n1; k >= 1; k--) {
+                while (n1 % i == 0 && n2 % i == 0) {
+                    obeb=i;
+
+                    break;
+                }i++;
+            }System.out.println("obeb= "+obeb);
+
+            for (int m=n1*n2; m >1; m--) {
+                while (j % n1 == 0 && j % n2 == 0) {
+                    okek=j;
+                    break;
+                }j--;
+            }System.out.println("okek= "+okek);
+        }
+    }
