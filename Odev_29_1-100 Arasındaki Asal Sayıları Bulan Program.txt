@@ -1,0 +1,28 @@
+/* 1-100 Arasýndaki Asal Sayýlarý Bulan Program */
+
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("1-100 arasindaki asal sayilar: ");
+
+        for (int i=2;i<=100;i++)
+        {
+            int kontrol=0;
+
+            for (int k=2;k<i;k++)
+            {
+                if(i%k==0)
+                {
+                    kontrol=1;
+                    break;
+                }
+            }
+            if (kontrol==0)
+            {
+                System.out.print(" " +i);
+            }
+        }
+    }
+}
+
