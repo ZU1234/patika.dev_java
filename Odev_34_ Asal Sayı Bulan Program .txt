@@ -1,0 +1,40 @@
+/* Asal Sayý Bulan Program */
+
+import java.util.Scanner;
+public class Main {
+    static int asal(int a){
+        boolean isKontrol=true;
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("\nSayi giriniz: ");
+        a = input.nextInt();
+            for (int i = 2; i < a; i++) {
+
+                    if ((a!=2)&&(a % i == 0)) {
+                        isKontrol=false;
+                        break;
+
+                    }else {
+                        isKontrol=true;
+                    }
+
+            }
+        if(a==0||a==1){
+            isKontrol = false;
+        }
+        if(isKontrol){
+            System.out.println(a + " Asal sayidir.");
+
+        }else{
+            System.out.println(a + " Asal sayi degildir.");
+            asal(a);
+        }
+
+        return 5;
+    }
+
+       public static void main(String[] args) {
+        asal(0);
+    }
+}
+
