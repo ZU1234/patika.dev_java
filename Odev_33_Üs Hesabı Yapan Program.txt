@@ -1,0 +1,23 @@
+/*  */
+import java.util.Scanner;
+public class Main {
+    static int uss(int a,int b){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Taban degerini giriniz: ");
+         a=input.nextInt();
+        System.out.print("Us Degerini giriniz :");
+         b =input.nextInt();
+
+         int reasult=a;
+        for(int i=1;i<b;i++){
+            reasult*=a;
+        }
+        System.out.println("Sonuc = "+reasult);
+        return uss(a,b);
+    }
+
+       public static void main(String[] args) {
+        uss(0,0);
+    }
+}
+
