@@ -1,0 +1,109 @@
+/*Pratik Hesap Makinesi*/
+
+
+import java.util.Scanner;
+public class Main {
+    static int sum(int a,int b){
+        int resault = a+b;
+        System.out.println("\nToplam : "+ resault);
+        return a+b;
+    }
+    static int minus(int a,int b){
+        int resault=a-b;
+        System.out.print("\nCıkarma = "+resault);
+        return a-b;
+    }
+    static int times(int a, int b){
+        int resault = a*b;
+        System.out.println("\nCarpma = "+resault);
+        return  a*b;
+    }
+    static int divided(int a,int b){
+
+        int resault=a/b;
+
+        System.out.println("\nBolme = "+resault);
+        return a/b;
+    }
+    static int power(int a,int b){
+        int resault=1;
+        for(int i=1;i<b;i++){
+            resault*=a;
+        }
+        System.out.println("\n Us alma isleminin sonucu: "+resault);
+        return resault;
+    }
+    static int mod(int a,int b){
+        int resault = a%b;
+        System.out.println("\n"+a+" mod "+b+"  isleminin sonucu = "+resault);
+        return a%b;
+    }
+    static int alanCevre(int a,int b){
+        int alan = a*b;
+        int cevre = 2*a+2*b;
+        System.out.println("\nAlan = "+alan+"\tCevre = "+cevre);
+        return alan+cevre;
+
+    }
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int select;
+
+        String menu ="1-Toplama Islemi\n"+
+                "2-Cikarma Islemi\n"+
+                "3-Carpma Islemi\n"+
+                "4-Bolme Islemi\n"+
+                "5-Uslu Sayi Hesaplama\n"+
+                "6-Mod Alma\n"+
+                "7-Dikdortgen Alan ve Cevre Hesabi\n"+
+                "8-Cikis Yap";
+        System.out.println("\n"+menu);
+        while(true) {
+
+
+            System.out.print("\nIlk sayiyi giriniz: ");
+            int a = input.nextInt();
+            System.out.print("\nIkinci sayiyi giriniz.");
+            int b = input.nextInt();
+            System.out.print("\nBir islem seciniz:");
+            select = input.nextInt();
+            if (select == 0) {
+                break;
+            }
+
+
+            switch (select) {
+                case 1:
+                    sum(a, b);
+                    break;
+                case 2:
+                    minus(a,b);
+                    break;
+                case 3:
+                    times(a,b);
+                    break;
+                case 4:
+                    if (a>b){
+                    divided(a,b);}
+                    else {
+                        System.out.print("\nikinci sayi sifirdan farkli olmalidir.");
+                    }
+                    break;
+                case 5:
+                    power(a,b);
+                    break;
+                case 6:
+                    mod(a,b);
+                    break;
+                case 7:
+                    alanCevre(a,b);
+                    break;
+                default:
+                    System.out.println("\nYanlis bir deger girdiniz,tekrar deneyiniz.");
+            }
+        }
+
+    }
+
+}
+
