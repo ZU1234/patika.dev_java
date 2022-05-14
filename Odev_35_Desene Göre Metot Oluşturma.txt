@@ -1,0 +1,45 @@
+/* Desene Göre Metot Oluþturma
+Java dilinde kullanýcýdan alýnan n deðerine göre 
+aþaðýdaki kurala uyan döngü kullanmadan bir "Recursive" metot yazýn.
+
+Kural : Girilen sayý 0 veya negatif olduðu yere kadar girilen sayýdan 
+5 rakamýný çýkarýn. Her çýkarma iþlemi sýrasýnda 
+ekrana son deðeri yazdýrýn. Sayý negatif veya 0 olduktan sonra tekrar 
+5 ekleyin. Yine her ekleme iþleminde sayýnýn son deðerini ekrana yazdýrýn. */
+
+import java.util.Scanner;
+public class Main {
+
+    static int designBot(int a){
+
+        System.out.print(" "+a);
+        if(a>0){
+            a-=5;
+            designBot(a);
+        }
+        return 1;
+    }
+
+
+    static int designTop(int a,int b){
+
+        System.out.print(" "+a);
+        if(a<b){
+            a+=5;
+            designTop(a,b);
+        }
+        return 1;
+    }
+
+    
+
+    public static void main(String[] args) {
+        Scanner sayi = new Scanner(System.in);
+
+        System.out.print("N sayisi : ");
+        int num = sayi.nextInt();
+
+        designTop(designBot(num),num);
+    }
+}
+
