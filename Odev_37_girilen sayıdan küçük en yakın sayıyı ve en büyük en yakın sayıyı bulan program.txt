@@ -1,0 +1,37 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] list = {5,-9,6,-78,3,144,65,-89,55,66,-11,20,0,1,-7};
+      
+        Arrays.sort(list);
+        System.out.println(Arrays.toString(list));
+       
+        int min=list[0];
+        int max=list[0];
+        int[] dizi=new int[0] ;
+      
+        Scanner input=new Scanner(System.in);
+
+        System.out.print("Sayi giriniz: ");
+        
+        int sayi = input.nextInt();
+        Arrays.fill(dizi,sayi);
+        
+        for (int i : list) {
+            if (i <=sayi) {
+                int k=Arrays.binarySearch(list,min=i);
+                max=k+1;
+                min=k;
+            }if (i ==sayi) {
+                int k=Arrays.binarySearch(list,min=i);
+                max=k+1;
+                min=k-1;
+
+            }
+        } 
+        System.out.println("Sayiya en yakin min deger : "+list[min]);
+        System.out.println("Sayiya en yakin max deger : "+list[max]);
+    }
+}
