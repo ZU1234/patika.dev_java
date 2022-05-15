@@ -1,0 +1,27 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+            System.out.print("n sayisini giriniz : ");
+            int num = input.nextInt();
+
+        if(num<=100) {
+            double toplam = 0;
+            double[] dizi = new double[num];
+
+            for (int i = 1; i <= num; i++) {
+                dizi[i - 1] = 1.0 / i;
+                toplam+=dizi[i-1];
+
+            }
+            System.out.println(Arrays.toString(dizi));
+            System.out.println("Toplam: "+toplam);
+            System.out.println("Harmonik Ortalamasi : "+num/toplam);
+        }else {
+            System.out.println("100 den kucuk bir n sayisi giriniz!!");
+        }
+    }
+}
