@@ -1,0 +1,130 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Course {
+    String name;
+    String no;
+    String ders;
+    double ortalama;
+
+    int[] arr= new int[4];
+
+    public Course(){
+        Scanner input =new Scanner(System.in);
+
+        System.out.print("Ogreci adi ve soy adi giriniz.");
+        this.name =input.nextLine();
+
+        System.out.print("Ogrenci numarasini girniz.");
+        this.no=input.nextLine();
+
+        System.out.print("Ogrencinin aldigi dersi giriniz.");
+        this.ders=input.nextLine();
+        Course(name,no,ders);
+        Avarage(arr);
+    }
+
+
+    public void Course(String isim,String no,String ders){
+        this.name=name;
+        this.no=no;
+        System.out.println(isim+" "+no+" "+ders);
+    }
+
+
+    public void Avarage(int[] arr){
+        this.arr=arr;
+        int toplam=0;
+        Course(arr,this.ders);
+        this.ortalama=ortalama;
+        for(int i=0;i<3;i++){
+            toplam+=arr[i];
+        }
+        ortalama=((toplam)*0.80)+arr[3]*0.20;
+
+    }
+
+
+    public void Course(int arr[],String ders){
+        this.arr=arr;
+        this.ders=ders;
+        Scanner input =new Scanner(System.in);
+
+              for(int i=0;i<3;i++) {
+                  do{
+            System.out.print(ders + " "+(i+1)+" notunu giriniz: ");
+            arr[i] = input.nextInt();
+                  if(arr[i]<0||arr[i]>100){
+                          System.out.println("Lutfen 0-100 araliginda not giriniz.");
+                  }
+                  }while (arr[i]<0||arr[i]>100);
+        }
+        System.out.print("Sozlu notunu giriniz: ");
+        arr[3]=input.nextInt();
+
+
+    }
+
+
+    public void Realty(){
+
+        System.out.println("(Notlarin %80'i sozlunun %20'si)\n Not Ortalamasi : "+ortalama);
+        System.out.println("Ders gecme kurali : 50 ustu not ortalamasina sahip ogrenci dersi gecmektedir.");
+        if(ortalama<50){
+            System.out.println("Dersten kaldiniz.Biraz daha calismalisiniz.");
+        }else {
+            System.out.println("Tebrikler dersi gectiniz.");
+        }
+    }
+
+
+    public void Print(){
+
+        System.out.println("Alinan notlar : "+ Arrays.toString(arr));
+        System.out.println("Sozlu puani : "+arr[3]);
+        System.out.println("(Notlarin %80'i sozlunun %20'si)\n Not Ortalamasi : "+ortalama);
+    }
+
+}
+
+
+
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int[] arr= {0,0,0,0};
+        double ortalama=0;
+        int select=0;
+        Course yeni =new Course();
+        do {
+            System.out.println("********************************");
+            System.out.print("Yapmak istediginiz islemi seciniz:\n" +
+                    "1-Not Ortalamasi Hesabi\n"+
+                    "2-Sinif gecme durumu\n"+
+                    "3-Cikis icin 0'a basiniz.");
+            Scanner input =new Scanner(System.in);
+            select =input.nextInt();
+            System.out.println();
+            switch (select) {
+                case 1: {
+                    yeni.Print();
+                    break;
+                }
+                case 2: {
+                    yeni.Realty();
+                } case 0:{
+                    break;
+                }
+                default:
+                    System.out.println("Hatali secim yaptiniz.Lutfen tekrar deneyiniz.");
+            }
+        }while (select!=0);
+        System.out.println("Cikis yapildi.");
+
+    }
+
+}
+
