@@ -1,0 +1,70 @@
+public class Employee {
+    // Nitelikler
+    String name;
+    double salary;
+    int workHours;
+    int hireYear;
+
+    public Employee(String name,double salary,int workHours,int hireYear){
+        this.name=name;
+        this.salary=salary;
+        this.workHours=workHours;
+        this.hireYear=hireYear;
+    }
+    double tax(){
+        double vergi;
+        //Maasa uygulanan vergiyi hesaplar.
+        //Calisanin maasi 1000 TL'den az ise vergi uygulanmayacaktir.
+        if(salary<1000){
+            return 0;
+        }//Calisanin maasi 1000 TL'den fazla ise maasinin %3'u kadar vergi uygulanacaktir.
+        else {
+            return this.salary*0.03;
+        }
+    }
+
+    double bonus(){
+        /* Eger calisan haftada 40 saatten fazla calismis ise fazladan calistigi her saat
+        basina 30 TL olacak sekilde bonus ucretleri hesaplayacaktir. */
+
+        if(workHours>40){
+            return (workHours-40)*30;
+        }
+        return 0;
+    }
+
+    double raiseSalary(){
+        /*Calisanin ise baslangic yilina gore maas artisini hesaplayacaktir.
+        Suan ki yili 2021 olarak alin.*/
+
+       /* ==> Eger calisan 10 yildan az bir suredir calisiyorsa maasina %5 zam
+        yapilacaktir.*/
+
+         /*==> Eger calisan 9 yildan fazla ve 20 yildan az calisiyorsa maasina
+        %10 zam yapilacaktir.*/
+
+        /*==> Eger calisan 19 yildan fazla calisiyorsa %15 zam yapilacaktir.*/
+
+        int difference=2021-hireYear;
+
+        if(difference<10){
+            return salary*0.05;
+        }else if(difference>9 && difference<20){
+            return salary*0.1;
+        }else {
+            return salary*0.15;
+        }
+    }
+    //Method ismini toString yapabilmek icin overloading yapmak zorundayim.
+    public void toString(String name){
+        System.out.println("Adi : "+name);
+        System.out.println("Maasi : "+salary);
+        System.out.println("Calisma saati : "+workHours);
+        System.out.println("Baslagic yili : "+hireYear);
+        System.out.println("Vergi : "+tax());
+        System.out.println("Bonus : "+bonus());
+        System.out.println("Maas artisi : "+raiseSalary());
+        System.out.println("Vergi ve Bonuslar ile birlikte maas : "+(bonus()-tax()+salary));
+        System.out.println("Toplam maas : "+(salary+raiseSalary()+bonus()-tax()));
+    }
+}
