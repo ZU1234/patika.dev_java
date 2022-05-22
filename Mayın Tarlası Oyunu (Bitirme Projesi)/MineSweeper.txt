@@ -1,0 +1,137 @@
+import java.util.Objects;
+import java.util.Scanner;
+
+public class MineSweeper {
+    int rowNumber;
+    int cowNumber;
+    String[][] board;
+    String[][] mayin;
+    int satir;
+    int sutun;
+    int counts =0;
+    public MineSweeper(int rowNumber,int cowNumber){
+        this.rowNumber=rowNumber;
+        this.cowNumber=cowNumber;
+        this.board= new String[rowNumber][cowNumber];
+        System.out.println("\nOyun Basladi!!");
+
+        board();
+    }
+    public void userOut(){
+        Scanner s =new Scanner(System.in);
+
+        do {System.out.print("Satir giriniz : ");
+            satir = s.nextInt();
+            System.out.print("Sutun giriniz :");
+            sutun = s.nextInt();
+            while (satir >= rowNumber || sutun >= cowNumber || satir < 0 || sutun < 0) {
+                    System.out.println("Hatali koordinat girdiniz!!");
+                    System.out.print("Satir giriniz : ");
+                    satir = s.nextInt();
+                    System.out.print("Sutun giriniz :");
+                    sutun = s.nextInt();
+            }
+            challenge(satir,sutun);
+            board();
+            counts++;
+            win();
+
+
+        }while ((mayin[satir][sutun]==null));
+                board[satir][sutun]="bom";
+                map();
+
+        System.out.println("\nGame over!!!");
+
+    }
+    public void board(){
+        for(int i=0;i<rowNumber;i++){
+            for (int k=0;k<cowNumber;k++){
+                if(board[i][k]==null){
+                    board[i][k]="-";
+                    System.out.print(board[i][k]+"\t");
+                }else {
+                    System.out.print(board[i][k] + "\t");
+                }
+
+            }
+            System.out.println();
+        }
+        System.out.println("\n*********************\n");
+
+    }
+    public void challenge(int satir,int sutun){
+        this.satir=satir;
+        this.sutun=sutun;
+        int count=0;
+        for(int i=satir-1;i<=satir+1;i++){
+            if(i>=0&&i<board.length) {
+                for (int j = sutun - 1; j <= sutun + 1; j++) {
+                    if(j>=0&&j<board[0].length) {
+
+                        if (mayin[i][j] != null) {
+                            count++;
+                        }
+
+                    }
+                }
+            }
+        }
+        if(Objects.equals(mayin[satir][sutun], "*")){
+            board[satir][sutun] = "Bom";
+        }else {
+            board[satir][sutun] = "" + count;
+        }
+    }
+    public void run() {
+       join();
+
+       userOut();
+
+    }
+    public void join(){
+        String[][] mayin = new String[rowNumber][cowNumber];
+        this.mayin=mayin;
+        for(int i=0;i<(rowNumber*cowNumber/4);i++){
+            int k= (int)(Math.random()*rowNumber);
+            int l= (int)(Math.random()*cowNumber);
+
+            if(mayin[k][l] == null){
+                mayin[k][l]="*";
+            }else{
+                i--;
+            }
+
+        }
+
+    }
+    public void win(){
+
+
+            if(counts==rowNumber*cowNumber-(rowNumber*cowNumber/4)){
+                System.out.println("YOU WIN !!");
+            }
+
+    }
+    public void map(){
+        //Mayın tarlası haritası
+
+        System.out.println("\tHarita\n");
+        for(int i=0;i<rowNumber;i++){
+            for (int k=0;k<cowNumber;k++){
+                if(mayin[i][k]!=null){
+
+                        board[i][k] = "*";
+                }
+                else{
+                    board[i][k]="-";
+                }
+
+                System.out.print(board[i][k]+" ");
+
+            }
+            System.out.println();
+        }
+        System.out.println("\n*********************\n");
+    }
+ }
